@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Schedule App</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.css">
+  </head>
+  <body>
+    <div class="columns">
+      <div class="column" id="column1">
+        <h1 class="title">ASSIGNMENTS DUE</h1>
+        <table class="table main_table box">
+          <thead>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Due</th>
+            <th>Remove</th>
+          </thead>
+          <tbody id="main_assignments_content">
+            <!-- assignments go here -->
+          </tbody>
+        </table>
+        <h1 class="title">UPCOMING TESTS</h1>
+        <table class="table main_table box">
+          <thead>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Due</th>
+            <th>Remove</th>
+          </thead>
+          <tbody id="main_exams_content">
+            <!-- exams go here -->
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <div id="top_add_button">
+          <button class="button is-link is-large" type="submit" id="add_button" onclick="add_()">ADD ASSIGNMENT/TEST</button>
+        </div>
+        <br>
+        <div id="main_add_form">
+          <form id="form_with_info">
+            <div class="control">
+              <!-- type -->
+              <div class="control">
+                <label class="radio">
+                  <input type="radio" name="type" id="assignment" required>
+                  Assignment
+                </label>
+                <label class="radio">
+                  <input type="radio" name="type" id="test">
+                  Test
+                </label>
+              </div>
+              <!-- subject -->
+              <br>
+              <label for="subject">Subject: </label>
+              <div class="select">
+                <select value="subject" id="subject">
+                  <option>Math</option>
+                  <option>English(S)</option>
+                  <option>English(P)</option>
+                  <option>Biology</option>
+                  <option>Chemistry</option>
+                  <option>Physics</option>
+                  <option>History</option>
+                  <option>Geography</option>
+                  <option>Business</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <br>
+            <!-- description -->
+            <label for="description">Description</label><textarea class="textarea" name="description" id="description" required></textarea>
+            <br>
+            <label for="due">Due: </label><input type="date" name="due" id="due" placeholder="dd-mm-yyyy" required>
+            <br>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script defer src="./main.js"></script>
+  </body>
+</html>
